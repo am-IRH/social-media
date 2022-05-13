@@ -8,6 +8,7 @@ const mongoose = require("mongoose")
 
 const userRoute = require("./route/users");
 const authRoute = require("./route/auth");
+const postRoute = require("./route/post");
 
 dotenv.config({path: path.resolve(__dirname, "./.env")});
 
@@ -25,6 +26,7 @@ app.use(morgan("common"));
 
 app.use("/api/users", userRoute)
 app.use("/api/auth", authRoute)
+app.use("/api/post", postRoute)
 
 app.listen(8800, () => {
     console.log("server is running!");
